@@ -15,10 +15,10 @@ app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs"); //ejs view engine
 app.set("views", "views");
 
-app.use(express.json());
-app.use("/api", { backendRouter });
+app.use(express.json()); //api router
+app.use("/api", backendRouter);
 
-app.get('/', (req, res) => //home page
+app.get("/", (req, res) => //home page
 {
     res.sendFile(path.join(__dirname, "public", "index.html"));
 });
@@ -34,16 +34,16 @@ app.get("/restaurants", (req, res) => //restaurants page
     res.render("restaurants", { restaurants });
 });
 
-app.get("/restaurants/:id", (req, res) =>
+app.get("/restaurants/:id", (req, res) => //restaurant details page
 {
     const id = parseInt(req.params.id);
     const restaurant = getRestaurant(id);
     res.render("restaurant-details", { restaurant })
 });
 
-app.get("/restaurantForm", (req, res) => //new restaurant page
+app.get("/new-restaurant-form", (req, res) => //new restaurant page
 {
-    res.sendFile(path.join(__dirname, "public", "restaurantForm.html"));
+    res.sendFile(path.join(__dirname, "public", "new-restaurant-form.html"));
 });
 
 app.listen(PORT, () =>

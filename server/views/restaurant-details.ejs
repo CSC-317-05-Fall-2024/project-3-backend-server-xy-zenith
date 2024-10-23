@@ -9,6 +9,10 @@
     <link rel = "stylesheet" href = "/styles.css"/>
     <link rel = "stylesheet" href = "/restaurant-details-styles.css"/>
     <link rel = "icon" type = "image/png" href = "images/icon.svg">
+
+    <!-- javascript -->
+    <script defer type = "text/javascript" src = "../scripts/header.js"></script>
+    <script defer type = "text/javascript" src = "../scripts/restaurantCards.js"></script>
 </head>
 
 <body>
@@ -16,16 +20,15 @@
     <nav></nav>
 
     <div class = "restaurant-details">
-        <img class = "restaurant-details-img" src = "<%= photo %>">
+        <img class = "restaurant-details-img" src = "<%= restaurant.photo %>">
         <div>
-            <h1><%= name %></h1>
-            <h2><%= address %></h2>
-            <h2><%= phone %></h2>
+            <h1><%= restaurant.name %></h1>
+            <h2><%= restaurant.address %></h2>
+            <h2><%= restaurant.phone %></h2>
         </div>
     </div>
 
     <footer></footer>
-    <script src = "/scripts/header.js"></script>
 </body>
 
 </html>

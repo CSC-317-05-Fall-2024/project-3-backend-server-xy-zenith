@@ -9,7 +9,7 @@ function headerRender()
     
     var headerImg = document.createElement("img"); //header image
     headerImg.className = "locationImg";
-    headerImg.src = "images/hongKong.jpg";
+    headerImg.src = "/images/hongKong.jpg";
     h1.appendChild(headerImg);
 
     var div = document.createElement("div"); //header text
@@ -32,19 +32,19 @@ function navRender()
 
     var attractionsLink = document.createElement("a"); //attractions link
     attractionsLink.className = "navLink";
-    attractionsLink.href = "attractions";
+    attractionsLink.href = "/attractions";
     attractionsLink.innerText = "Attractions";
     nav.appendChild(attractionsLink);
 
     var restaurantsLink = document.createElement("a"); //restaurants link
     restaurantsLink.className = "navLink";
-    restaurantsLink.href = "restaurants";
+    restaurantsLink.href = "/restaurants";
     restaurantsLink.innerText = "Restaurants";
     nav.appendChild(restaurantsLink);
 
     var restaurantFormLink = document.createElement("a"); //new restaurant link
     restaurantFormLink.className = "navLink";
-    restaurantFormLink.href = "restaurantForm";
+    restaurantFormLink.href = "/new-restaurant-form";
     restaurantFormLink.innerText = "New Restaurant";
     nav.appendChild(restaurantFormLink);
 }

@@ -1,6 +1,11 @@
 .restaurant-details {
-    margin: 30px 50px 30px 30px;
+    margin: 20px;
+    /* occupy page to make footer at bottom */
+    min-height: calc(70vh - (30px + 15px + 20px * 2));
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .restaurant-details-img { 

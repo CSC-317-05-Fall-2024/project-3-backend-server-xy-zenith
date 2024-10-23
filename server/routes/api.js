@@ -1,9 +1,23 @@
-import express from 'express';
+import express from "express";
 import { getRestaurants, getRestaurant, createRestaurant, deleteRestaurant } from "../data/restaurants.js";
 
 const router = express.Router();
 
-router.post("/restaurants", (req, res) =>
+router.get("/restaurants/:id", (req, res) =>
+{
+    const id = parseInt(req.params.id);
+    try
+    {
+        const restaurant = getRestaurant(id);
+        res.status(200).json(restaurant);
+    }
+    catch(error)
+    {
+        res.status(500).json({"Message": `${error}`});
+    }
+})
+
+router.post("/restaurants", (req, res) => //post
 {
     const restaurantData = req.body;
     try
@@ -18,7 +32,7 @@ router.post("/restaurants", (req, res) =>
     }
 });
 
-router.delete("/restaurants", (req, res) =>
+router.delete("/restaurants/:id", (req, res) => //delete
 {
     const id = parseInt(req.params.id);
     try
