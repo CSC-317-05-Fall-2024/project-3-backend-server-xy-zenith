@@ -3,7 +3,7 @@ import { getRestaurants, getRestaurant, createRestaurant, deleteRestaurant } fro
 
 const router = express.Router();
 
-router.get("/restaurants/:id", (req, res) =>
+router.get("/restaurants/:id", (req, res) => //get
 {
     const id = parseInt(req.params.id);
     try
@@ -15,7 +15,7 @@ router.get("/restaurants/:id", (req, res) =>
     {
         res.status(500).json({"Message": `${error}`});
     }
-})
+});
 
 router.post("/restaurants", (req, res) => //post
 {
@@ -44,6 +44,6 @@ router.delete("/restaurants/:id", (req, res) => //delete
     {
         res.status(500).json({"Message": `${error}`});
     }
-})
+});
 
 export { router as backendRouter };

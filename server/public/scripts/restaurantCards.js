@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function()
                 window.location.reload(); //refresh page to show changes
             }).catch(error => {
                 console.error("Error", error);
-            })
-        })
+            });
+        });
     }
 })
