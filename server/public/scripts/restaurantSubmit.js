@@ -17,7 +17,7 @@ const handleSubmit = async (event) => //handle submit event
         return res.json();
     }).then(data => {
         console.log(data);
-        window.location.href = `/restaurants/${data.id}`; //direct to new restaurant detail page
+        window.location.href = "/restaurants"; //direct to restaurant page
     }).catch(error => {
         console.error("Error: ", error);
     });
