@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", function()
 {
-    deleteButtons = document.querySelectorAll(".deleteButton"); //select all delete buttons
+    const deleteButtons = document.querySelectorAll(".deleteButton"); //select all delete buttons
+    
     for(let button of deleteButtons)
     {
-        button.addEventListener("click", (event) => 
+        button.addEventListener("click", (event) => //delete function when click
         {
             let restaurantId = button.id.split("-")[1]; //split = {"delete", "0"}
             fetch(`/api/restaurants/${restaurantId}`, {
@@ -21,18 +22,3 @@ document.addEventListener("DOMContentLoaded", function()
         })
     }
 })
-
-// deleteButtons.forEach(deleteButton => //add click event to delete buttons
-// {
-//     deleteButton.addEventListener("click", (event) =>
-//     {
-//         const restaurant = event.target.parentElement.parentElement; //locate restaurant card
-//         deleteRestaurantCard(restaurant);
-//     });
-// });
-
-
-// function deleteRestaurantCard(card) //function to delete restaurant
-// {
-//     card.remove();
-// }
